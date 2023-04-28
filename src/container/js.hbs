@@ -1,0 +1,68 @@
+<div>
+    {{> title data=name big=true}}
+    <p>{{description}}</p>
+    <p>Was created by {{history.founder}} in {{history.year}}</p>
+    <br>
+    <hr>
+    <div>
+    {{#each types}}
+        <span class="badge text-bg-info">{{this}}</span>
+    {{/each}}
+    </div>
+    <hr>
+    <div>
+    {{#with syntax}}
+        variables: 
+        {{#each variables}}
+        <span class="badge text-bg-secondary">{{this}}</span>
+        {{/each}}
+        <hr>
+        functions: 
+        {{#each functions}}
+        <span class="badge text-bg-secondary">{{this}}</span>
+        {{/each}}
+        <hr>
+        conditionals: 
+        {{#each conditionals}}
+        <span class="badge text-bg-secondary">{{this}}</span>
+        {{/each}}
+        <hr>
+        loops: 
+        {{#each loops}}
+        <span class="badge text-bg-secondary">{{this}}</span>
+        {{/each}}
+        <hr>
+        classes: 
+        {{#each classes}}
+        <span class="badge text-bg-secondary">{{this}}</span>
+        {{/each}}
+        <hr>
+    {{/with}}
+    </div>
+    <div>
+        features: 
+        {{#each features}}
+        <span class="badge rounded-pill text-bg-success">{{this}}</span>
+        {{/each}}
+        <hr>
+    </div>
+    <div>
+        libraries: 
+        {{#each libraries}}
+        <span class="badge rounded-pill text-bg-warning">{{this}}</span>
+        {{/each}}
+        <hr>
+    </div>
+    <div>
+        tools: 
+        {{#each tools}}
+        <span class="badge rounded-pill text-bg-danger">{{this}}</span>
+        {{/each}}
+        <hr>
+    </div>
+    <div>
+        {{#each community}}
+            <button type="button" class="btn btn-outline-info">{{type}}:{{name}}</button>
+        {{/each}}
+    </div>
+</div>
