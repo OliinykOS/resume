@@ -1,0 +1,266 @@
+<div>
+    <h2>{{make}} {{model}} ({{year}}) / {{color}} </h2>
+</div>
+<hr>
+<div>
+    {{#with features}}
+    <div>
+        <h4>Interior</h4>
+        {{#with interior}}
+        <div>
+            {{#with seats}}
+            <p>
+                Seats material: {{material}} / {{color}}, heated : 
+                {{#if heated}}
+                    <span class="badge rounded-pill text-bg-success">Yes</span>
+                {{else}}
+                    <span class="badge rounded-pill text-bg-danger">No</span>
+                {{/if}}
+                , ventilated : 
+                {{#if ventilated}}
+                <span class="badge rounded-pill text-bg-success">Yes</span>
+                {{else}}
+                    <span class="badge rounded-pill text-bg-danger">No</span>
+                {{/if}}
+            </p>
+            {{/with}}
+        </div>
+        <div>
+            {{#with dashboard}}
+            <p>Dashboard material : {{material}} / {{color}}</p>
+                {{#with display}}
+                    <p>
+                        Dysplay type : {{type}}, size : {{size}}, resolution : {{resolution}}, touchscreen : 
+                        {{#if touchscreen}}
+                            <span class="badge rounded-pill text-bg-success">Yes</span>
+                        {{else}}
+                            <span class="badge rounded-pill text-bg-danger">No</span>
+                        {{/if}}
+                    </p>
+                {{/with}}
+            {{/with}}
+        </div>
+        <div>
+            {{#with audio}}
+            <p>
+                Audio system: {{system}}, Number of speakers : {{speakers}}, subwoofer : 
+                {{#if subwoofer}}
+                    <span class="badge rounded-pill text-bg-success">Yes</span>
+                {{else}}
+                    <span class="badge rounded-pill text-bg-danger">No</span>
+                {{/if}}
+                , bluetooth : 
+                {{#if bluetooth}}
+                    <span class="badge rounded-pill text-bg-success">Yes</span>
+                {{else}}
+                    <span class="badge rounded-pill text-bg-danger">No</span>
+                {{/if}}
+                , USB : 
+                {{#if USB}}
+                    <span class="badge rounded-pill text-bg-success">Yes</span>
+                {{else}}
+                    <span class="badge rounded-pill text-bg-danger">No</span>
+                {{/if}}
+            </p>
+            {{/with}}
+        </div>
+        {{/with}}
+    </div>
+    <hr>
+    <div>
+        <h4>Exterior</h4>
+        {{#with exterior}}
+            <div>
+                {{#with wheels}}
+                <p>Wheels size: {{size}} - ({{type}} / {{color}})</p>
+                {{/with}}
+            </div>
+            <div>
+                {{#with headlights}}
+                <p>
+                    Headlights type: {{type}}, brightness: {{brightness}}, automatic: 
+                    {{#if automatic}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </p>
+                {{/with}}
+            </div>
+            <div>
+                {{#with sunroof}}
+                <p>
+                    Sunroof type: {{type}}, size: {{size}}, automatic: 
+                    {{#if automatic}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </p>
+                {{/with}}
+            </div>
+        {{/with}}
+    </div>
+    <hr>
+    <div>
+        {{#with safety}}
+        <h4>Safety: airbags</h4>
+        <table>
+            {{#with airbags}}
+            <tr>
+                <th>Front</th>
+                <td>{{front}}</td>
+            </tr>
+            <tr>
+                <th>Side</th>
+                <td>{{side}}</td>
+            </tr>
+            <tr>
+                <th>Knee</th>
+                <td>{{knee}}</td>
+            </tr>
+            <tr>
+                <th>Rear</th>
+                <td>{{rear}}</td>
+            </tr>
+            {{/with}}
+        </table>
+        <hr>
+        <h4>Safety: assistance</h4>
+        <table>
+            {{#with assistance}}
+            <tr>
+                <th>Blind spot monitoring: </th>
+                <td>
+                    {{#if blind_spot_monitoring}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <th>Rear cross traffic alert: </th>
+                <td>
+                    {{#if rear_cross_traffic_alert}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <th>Lane departure warning: </th>
+                <td>
+                    {{#if lane_departure_warning}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <th>Adaptive cruise control: </th>
+                <td>
+                    {{#if adaptive_cruise_control}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <th>Collision warning: </th>
+                <td>
+                    {{#if collision_warning}}
+                        <span class="badge rounded-pill text-bg-success">Yes</span>
+                    {{else}}
+                        <span class="badge rounded-pill text-bg-danger">No</span>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/with}}
+        </table>
+        {{/with}}
+    </div>
+    {{/with}}
+</div>
+<hr>
+<div>
+    {{#with engine}}
+    <h4>Engine</h4>
+    <table>
+        <tr>
+            <th>Type</th>
+            <td>{{type}}</td>
+        </tr>
+        <tr>
+            <th>Displacement</th>
+            <td>{{displacement}}</td>
+        </tr>
+        <tr>
+            <th>Horsepower</th>
+            <td>{{horsepower}}</td>
+        </tr>
+        <tr>
+            <th>Torque</th>
+            <td>{{torque}}</td>
+        </tr>
+        <tr>
+            <th>Transmission</th>
+            <td>{{transmission.type}} ({{transmission.gears}} gears)</td>
+        </tr>
+    </table>
+    {{/with}}
+</div>
+<hr>
+<div>
+    {{#with fuel_economy}}
+    <h4>Fuel economy</h4>
+        <table>
+            <tr>
+                <th>City</th>
+                <th>Higway</th>
+                <th>Combined</th>
+            </tr>
+            <tr>
+                <td>{{city}}</td>
+                <td>{{highway}}</td>
+                <td>{{combined}}</td>
+            </tr>
+        </table>
+    {{/with}}
+</div>
+<hr>
+<div>
+    {{#with price}}
+        <h4>Price</h4>
+        <table>
+            <tr>
+                <th colspan="2">Base</th>
+                <td>{{base}}</td>
+            </tr>
+            <tr>
+                <th colspan="2">Destination</th>
+                <td>{{destination}}</td>
+            </tr>
+            <tr>
+                <th rowspan="3">options</th>
+                <td>Navigation</td>
+                <td>{{options.navigation}}</td>
+            </tr>
+            <tr>
+                <td>Moonroof</td>
+                <td>{{options.moonroof}}</td>
+            </tr>
+            <tr>
+                <td>Premium paint</td>
+                <td>{{options.premium_paint}}</td>
+            </tr>
+            <tr>
+                <th colspan="2">Total</th>
+                <td>{{total}}</td>
+            </tr>
+        </table>
+    {{/with}}
+</div>
