@@ -1,0 +1,88 @@
+<div>
+    <h2>{{name}}</h2>
+    {{#each users}}
+        <div>
+            <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+            <h3>{{name}} ({{gender}} - {{age}})</h3>
+            <hr>
+            <h4>Friends :</h4>
+            <ul>
+                {{#each friends}}
+                    <li>
+                        <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+                        <h4>{{name}} ({{gender}} - {{age}})</h4>
+                        <hr>
+                        <h5>Friends :</h5>
+                        <ul>
+                            {{#each mutual_friends}}
+                                <li>
+                                    <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+                                    <h5>{{name}} ({{gender}} - {{age}})</h5>
+                                    {{#if friends}}
+                                    <hr>
+                                    <h6>Friends :</h6>
+                                    <ul>
+                                        {{#each mutual_friends}}
+                                            <li>
+                                                <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+                                                <h6>{{name}} ({{gender}} - {{age}})</h6>                                    
+                                            </li>                               
+                                        {{/each}}
+                                    </ul>
+                                    {{/if}}
+                                </li>                            
+                            {{/each}}
+                        </ul>
+                        {{#if groups}}
+                        <hr>
+                        <h5>Groups :</h5>
+                        <ul>                            
+                        {{#each groups}}
+                            <li>
+                                <span class="badge rounded-pill text-bg-info">{{id}}</span>
+                                <h5>{{name}}</h5>
+                                <p>{{description}}</p>
+                                <hr>
+                                <h6>Members :</h6>
+                                <ul>
+                                    {{#each members}}
+                                    <li>
+                                        <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+                                        <h6>{{name}} ({{gender}} - {{age}})</h6>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/each}}
+                        </ul>
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+            {{#if groups}}
+            <hr>
+            <h4>Groups :</h4>
+            <ul>
+                {{#each groups}}
+                    <li>
+                        <span class="badge rounded-pill text-bg-info">{{id}}</span>
+                        <h4>{{name}}</h4>
+                        <p>{{description}}</p>
+                        <hr>
+                        <h5>Members :</h5>
+                        <ul>
+                            {{#each members}}
+                            <li>
+                                <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
+                                <h5>{{name}} ({{gender}} - {{age}})</h5>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                {{/each}}
+            {{/if}}
+            </ul>
+        </div>
+        <hr>
+    {{/each}}
+</div>
