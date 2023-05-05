@@ -1841,6 +1841,7 @@ router.get('/shoporder', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
     layout: 'shop',
+    
     navigation: {
       links: [
         {
@@ -2208,6 +2209,7 @@ router.get('/shopcart', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
     layout: 'shop',
+
     navigation: {
       links: [
         {
@@ -2456,6 +2458,7 @@ router.get('/shopprofile', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
     layout: 'shop',
+
     navigation: {
       links: [
         {
@@ -2749,7 +2752,8 @@ router.get('/shopreview', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
-    // layout: 'shop',
+    layout: 'shop',
+
     navigation: {
       links: [
         {
@@ -3037,7 +3041,8 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
-    // layout: 'shop',
+    layout: 'shop',
+
     navigation: {
       links: [
         {
