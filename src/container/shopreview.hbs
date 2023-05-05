@@ -1,0 +1,147 @@
+<main class='m-1'>
+  <div class='card'>
+    {{#with navigation}}
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a class='nav-link' href={{href}}>{{text}}</a>
+          </div>
+        {{/each}}
+        <a class='nav-link disabled' href='#'>Disabled</a>
+      </div>
+    {{/with}}
+  </div>
+  <section>
+    {{#with formBlock}}
+      <div class='row'>
+        <div class='col-8'>
+          <h1>{{header}}</h1>
+          <div>{{rating.title}}: {{rating.value}}</div>
+          {{#with actionBlock}}
+            <div>
+              <ul class='nav nav-tabs nav-fill'>
+                {{#each tabs}}
+                  <li class='nav-item'>
+                    {{#if isActive}}
+                      <a
+                        class='nav-link active fs-5 fw-bold'
+                        aria-current='page'
+                        href='#'
+                      >{{text}}</a>
+                    {{else}}
+                      <a
+                        class='nav-link fs-5'
+                        href='#'
+                      >{{text}}</a>
+                    {{/if}}
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+            <hr />
+            <div class='card'>
+              {{#with report}}
+                <div class='card-body'>
+                  <div class='fs-4'>{{title}}</div>
+                  <button
+                    type='button'
+                    class='btn btn-secondary my-3'
+                    href={{button.link}}
+                  >{{button.text}}</button>
+                </div>
+              {{/with}}
+            </div>
+          {{/with}}
+          <hr />
+          <div>
+            {{#with feedbackBlock}}
+              <div class='fs-1 my-5'>{{title}}</div>
+              {{#each buttons}}
+                {{#if isWarning}}<button
+                    type='button'
+                    class='btn btn-warning text-light me-4'
+                    href={{link}}
+                  >{{text}}</button>{{/if}}
+                {{#if isSuccess}}<button
+                    type='button'
+                    class='btn btn-success me-4'
+                    href={{link}}
+                  >{{text}}</button>{{/if}}
+                {{#if isDanger}}<button
+                    type='button'
+                    class='btn btn-danger me-4'
+                    href={{link}}
+                  >{{text}}</button>{{/if}}
+              {{/each}}
+            {{/with}}
+          </div>
+        </div>
+        <div class='col-4'>
+          {{#with goodsInfo}}
+            <div class='card my-3'>
+              <div class='card-body'>
+                <img src={{photo}} alt={{name}} />
+                <div class='fs-5 fw-semibold'>{{name}}</div>
+              </div>
+            </div>
+            <div class='card my-3'>
+              <div class='card-body'>
+                <div
+                  class='fs-3 fw-semibold'
+                >{{price}}</div>
+                {{#if inMarket}}
+                  <div class='fs-5'>Є в наявності</div>
+                {{/if}}
+                {{#each buttons}}
+                  {{#if isPrimary}}<button
+                      type='button'
+                      class='btn btn-primary my-2'
+                      href={{link}}
+                    >{{text}}</button><br />{{/if}}
+                  {{#if isSecondary}}<button
+                      type='button'
+                      class='btn btn-secondary my-2'
+                      href={{link}}
+                    >{{text}}</button><br />{{/if}}
+                {{/each}}
+              </div>
+            </div>
+            <div class='card my-3'>
+              <div class='card-body'>
+                <div>{{seller.title}}:
+                  <b> {{seller.value}}</b></div>
+              </div>
+            </div>
+          {{/with}}
+        </div>
+      </div>
+    {{/with}}
+  </section>
+  <hr />
+  <section>
+    {{#each reviewList}}
+      {{> reviewItem review=this}}
+    {{/each}}
+  </section>
+  <section>
+    {{#with service}}
+      <div class='card text-bg-success text-center'>
+        <div class='card-body'>
+          <h2 class='card-title'>{{title}}</h2>
+          <p>{{description}}</p>
+          {{#each buttons}}
+            <button
+              type='button'
+              class='btn btn-primary text-start mt-2'
+              href={{link}}
+            >{{text}}</button><br />
+          {{/each}}
+        </div>
+      </div>
+    {{/with}}
+  </section>
+  <hr />
+  <section>
+    {{!Footer with Links}}
+  </section>
+</main>
