@@ -2207,8 +2207,7 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
-    layout: 'shop',   
-    
+    layout: 'shop',
     navigation: {
       links: [
         {
@@ -2457,7 +2456,6 @@ router.get('/shopprofile', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
     layout: 'shop',
- 
     navigation: {
       links: [
         {
