@@ -1,0 +1,29 @@
+{{#with item}}
+  <div class='row'>
+    <div class='col-4'>
+      <div>{{number}}</div>
+      <div class='fw-medium'>{{status}}</div>
+    </div>
+    <div class='col-2'>
+      <div>{{amount.title}}</div>
+      <div class='fw-medium'>{{amount.value}}</div>
+    </div>
+    <div class='col-4'>
+      {{#each images}}
+        <img src={{this}} alt='' />
+      {{/each}}
+    </div>
+    <div class='col-2'>
+      {{#with button}}
+        {{#if isPrimary}}
+          <button
+            type='btn'
+            class='btn btn-primary'
+            href={{link}}
+          >{{text}}</button>
+        {{/if}}
+      {{/with}}
+    </div>
+  </div>
+  <hr />
+{{/with}}
