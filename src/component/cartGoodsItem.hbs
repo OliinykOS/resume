@@ -1,0 +1,38 @@
+{{#with item}}
+  <div class='card my-4'>
+    <div class='caard-body p-1'>
+      <div class='row'>
+        <div class='col-2 my-2'>
+          <img src={{image}} alt={{name}} />
+        </div>
+        <div class='col-4'>
+          <h5>{{name}}</h5>
+          <p>{{description}}</p>
+        </div>
+        <div class='col-2 my-3'>
+          <p>{{price.title}}</p>
+          <div class='display-6'>{{price.value}}</div>
+        </div>
+        <div class='col-2 my-5'>
+          <p>{{amount}}</p>
+        </div>
+        <div class='col-2'>
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <button
+                type='button'
+                class='btn btn-primary my-2'
+              >{{text}}</button>
+            {{/if}}
+            {{#if isDanger}}
+              <button
+                type='button'
+                class='btn btn-outline-danger my-2'
+              >{{text}}</button>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/with}}
