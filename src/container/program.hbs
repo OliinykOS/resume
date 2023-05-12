@@ -1,90 +1,108 @@
-<div>
-    {{#with program}}
-        {{#with excursion}}
-            {{> title data=name big=true}}
-            <time datetime={{date}}>{{date}} - {{location.country}}, {{location.city}}</time>
-            <br>
-            {{> title data="Tour program"}}
-            <div>
-                <ul>
-                    {{#each program}}
-                    <li>
-                        <details>
-                            <summary>{{name}}, {{type}} (duration: {{duration}} hours)</summary>
-                            {{#with details}}
-                                {{#if museum}}
-                                    {{#with museum}}
-                                        <br>
-                                        <div><strong>{{name}}</strong></div>
-                                        <br>
-                                        <div>
-                                            {{#with location}}
-                                            Address: {{address}}, {{city}}, {{country}}
-                                            {{/with}}
-                                        </div>
-                                        <br>
-                                        <hr>
-                                        <br>
-                                        <div>
-                                            {{> title data="Exhibits:"}}
-                                            <ul>
-                                            {{#each exhibits}}
-                                                <li>
-                                                    <div>
-                                                        <b>{{name}}</b>, {{artist}} 
-                                                        {{#if audio_guide}}
-                                                            (with audio guide)
-                                                        {{/if}}
-                                                    </div>
-                                                    <div><em>{{description}}</em></div>
+<main class='m-2'>
+  {{#with program}}
+    <div class='card'>
+      {{#with excursion}}
+        <div class='card-header'>
+          <h2>{{name}}</h2>
+          <time datetime={{date}}>{{date}}
+            -
+            {{location.country}},
+            {{location.city}}</time>
+        </div>
+        <div class='card-body'>
+          <h3>Program:</h3>
+          <div>
+            <ul>
+              {{#each program}}
+                <li>
+                  <details>
+                    <summary>{{name}},
+                      {{type}}
+                      <span
+                        class='badge rounded-pill text-bg-info'
+                      >{{duration}} hours</span>
+                    </summary>
+                    {{#with details}}
+                      <div class='card m-3'>
+                        {{#if museum}}
+                          {{#with museum}}
+                            <div class='card-header'>
+                              <h4>{{name}}</h4>
+                              {{#with location}}
+                                <em>
+                                  Address:
+                                  {{address}},
+                                  {{city}},
+                                  {{country}}</em>
+                              {{/with}}
+                            </div>
 
-                                                    <br>
-                                                </li>
-                                            {{/each}}
-                                            </ul>
-                                        </div>
-                                    {{/with}}
-                                    <br>
-                                    <hr>
-                                    <br>
-                                {{/if}}
-                                {{#if venue}}
-                                    {{#with venue}}
-                                        <br>
-                                        <div><strong>{{name}}</strong></div>
-                                        <br>
-                                        <div>
-                                            {{#with location}}
-                                            Address: {{address}}, {{city}}, {{country}}
-                                            {{/with}}
-                                        </div>
-                                    {{/with}}
-                                    <br>
-                                    <hr>
-                                    <br>
-                                    {{> title data="Performers:"}}
-                                    <ul>
-                                    {{#each performers}}
-                                        <li><b>{{name}}</b> (<i>{{type}}</i>)</li>
-                                        <br>
-                                    {{/each}}
-                                    </ul>
-                                    <br>
-                                    <hr>
-                                    <br>
-                                {{/if}}
-                                {{#with guide}}
-                                    <div><strong>Guide:</strong> {{name}} (<em>{{language}}</em>) - Rating: {{rating}}</div>
-                                {{/with}}
-                                <br>
-                                <hr>
-                                <br>
-                            {{/with}}
-                        </details>
-                    </li>
-                    {{/each}}                  
-                </ul>
-            </div>
-        {{/with}}
-    {{/with}}
-</div>
+                            <div class='card-body'>
+                              <h5>Exhibits:</h5>
+                              <ul>
+                                {{#each exhibits}}
+                                  <li>
+                                    <div>
+                                      <b>{{name}}</b>,
+                                      {{artist}}
+                                      {{#if audio_guide}}
+                                        <span
+                                          class='badge rounded-pill text-bg-info'
+                                        >with audio guide</span>
+                                      {{/if}}
+                                    </div>
+                                    <div><em
+                                      >{{description}}</em></div>
+                                  </li>
+                                {{/each}}
+                              </ul>
+                            </div>
+                          {{/with}}
+                        {{/if}}
+                        {{#if venue}}
+                          {{#with venue}}
+                            <div class='card-header'>
+                              <h4>{{name}}</h4>
+                              {{#with location}}
+                                <em>Address:
+                                  {{address}},
+                                  {{city}},
+                                  {{country}}</em>
+                              {{/with}}
+                            </div>
+                          {{/with}}
+                          <div class='card-body'>
+                            <h5>Performers:</h5>
+                            <ul>
+                              {{#each performers}}
+                                <li>
+                                  <b>{{name}}</b>
+                                  <div>
+                                    <em>{{type}}</em>
+                                  </div>
+                                </li>
+                              {{/each}}
+                            </ul>
+
+                          </div>
+                        {{/if}}
+                        {{#with guide}}
+                          <div class='card-footer'><strong
+                            >Guide:</strong>
+                            {{name}}
+                            (<em>{{language}}</em>) -
+                            Rating:
+                            {{rating}}</div>
+                        {{/with}}
+                      </div>
+                    {{/with}}
+                  </details>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  {{/with}}
+</main>

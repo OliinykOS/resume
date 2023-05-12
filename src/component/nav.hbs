@@ -1,6 +1,27 @@
 <nav>
+  {{!--
     {{> link text='Summary' href="/summary" line=true }}
     {{> link text='Skills' href="/skills" line=true }}
     {{> link text='Education' href="/education" line=true }}
     {{> link text='Work' href="/work" line=true noLine=true }}
+--}}
+  <ul class='nav justify-content-center'>
+    <li class='nav-item'>
+      <a
+        class='nav-link active'
+        aria-current='page'
+        href='/summary'
+      >Summary</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/skills'>Skills</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/education'>Education</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/work'>Work</a>
+    </li>
+  </ul>
 </nav>
+<hr />

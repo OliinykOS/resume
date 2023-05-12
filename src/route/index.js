@@ -42,7 +42,96 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    pages: [
+      {
+        text: 'Task 0.1 - Summary',
+        href: '/summary',
+      },
+      {
+        text: 'Task 0.2 - Skills',
+        href: '/skills',
+      },
+      {
+        text: 'Task 0.3 - Education',
+        href: '/education',
+      },
+      {
+        text: 'Task 0.4 - Work',
+        href: '/work',
+      },
+      {
+        text: 'Task 0.5 - Person',
+        href: '/person',
+      },
+      {
+        text: 'Task 0.6 - Bio',
+        href: '/bio',
+      },
+      {
+        text: 'Task 0.7 - Program',
+        href: '/program',
+      },
+      {
+        text: 'Task 0.8 - Web',
+        href: '/web',
+      },
+      {
+        text: 'Task 1.1 - JS',
+        href: '/js',
+      },
+      {
+        text: 'Task 1.2 - Car',
+        href: '/car',
+      },
+      {
+        text: 'Task 1.3 - Mac',
+        href: '/mac',
+      },
+      {
+        text: 'Task 1.4 - Facebook',
+        href: '/facebook',
+      },
+      {
+        text: 'Task 2.1',
+        href: '/task21',
+      },
+      {
+        text: 'Task 2.2',
+        href: '/task22',
+      },
+      {
+        text: 'Task 3',
+        href: '/task21',
+      },
+      {
+        text: 'Task 4 - ShopHome',
+        href: '/shophome',
+      },
+      {
+        text: 'Task 5 - ShopOrder',
+        href: '/shoporder',
+      },
+      {
+        text: 'Task 6.1 - ShopCart',
+        href: '/shopcart',
+      },
+      {
+        text: 'Task 6.2 - ShopProfile',
+        href: '/shopprofile',
+      },
+      {
+        text: 'Task 7.1 - ShopReview',
+        href: '/shopreview',
+      },
+      {
+        text: 'Task 7.2 - ShopCatalog',
+        href: '/shopcatalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
@@ -217,7 +306,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
     
-    layout: 'big',
+    //layout: 'big',
 
     page: {
       title: 'Resume | Work',

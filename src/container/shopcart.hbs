@@ -1,4 +1,4 @@
-<main>
+<main class="m-2">
   <div class='card'>
     {{#with navigation}}
       <div class='nav'>
@@ -101,15 +101,6 @@
   </section>
   <hr />
   <section>
-    {{!Footer with Links}}
-    <div class="row">
-      {{#each footer}}
-        <div class="col-2">
-          {{#each footer}}
-          <a href={{link}}>{{text}}</a>
-          {{/each}}
-        </div>
-      {{/each}}
-    </div>
+    {{> shopfooter footer=footer}}
   </section>
 </main>

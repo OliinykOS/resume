@@ -1,22 +1,26 @@
 {{#with footer}}
-    <footer>
-        <hr>
-        <br>
-        <div>
-        {{#with social}}
-            {{> link text=email.text href=email.href blank=true }}
-            {{> link text=phone.text href=phone.href blank=true }}
-            {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
-        {{/with}}
-        </div>
-        <br>
-        <div>
-            <em>Copyright by {{../header.name.firstname}} {{../header.name.lastname}}</em>
-        </div>
-        <br>
-        <div>
-            <em>{{../header.address}}</em>
-        </div>
+  <footer>
+    <hr>
+    <div class="text-center my-4">
+      {{#with social}}
+      <div class="btn btn-primary m-2" href="email.href">
+        <i class="bi bi-envelope-at"> {{email.text}}</i> 
+      </div>
+      <div class="btn btn-success m-2" href="phone.href">
+        <i class="bi bi-telephone"> {{phone.text}}</i> 
+      </div>
+      <div class="btn btn-outline-primary m-2" href="linkedin.href">
+        <i class="bi bi-linkedin"> {{linkedin.text}}</i> 
+      </div>
+      {{/with}}
+    </div>
         
-    </footer>
-{{/with}}
+    <div class="text-end">
+      <em><i class="bi bi-c-circle"></i> Copyright by {{../header.name.firstname}} {{../header.name.lastname}}</em>
+    </div>
+    <div class="text-end">
+      <em>{{../header.address}}</em>
+    </div>
+        
+  </footer>
+{{/with}}       

@@ -1,28 +1,37 @@
-{{!-- 
+{{! 
 Це код container файлу для summary сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
+}}
 
 <div>
-    {{#with main}}
+  {{#with main}}
     <main>
-        <section>
-            {{> title data=summary.title big=true}}
-            <div>
-                <p>{{summary.text}}</p>
+      <section>
+        {{#with summary}}
+          <div class='card m-2'>
+            <div class='card-header'>
+              <h2>{{title}}</h2>
             </div>
-        </section>
-
-        {{#with experience}}
-            <section>
-                {{> title data=title}}
-                <div>
-                    <p>{{text}}</p>
-                </div>
-            </section>
+            <div class='card-body'>
+              <p>{{text}}</p>
+            </div>
+          </div>
         {{/with}}
+      </section>
+      <section>
+        {{#with experience}}
+          <div class='card m-2'>
+            <div class='card-header'>
+              <h3>{{title}}</h3>
+            </div>
+            <div class='card-body'>
+              <p>{{text}}</p>
+            </div>
+          </div>
+        {{/with}}
+      </section>
     </main>
-    {{/with}}
+  {{/with}}
 </div>
 
 {{!-- 
