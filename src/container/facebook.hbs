@@ -1,88 +1,173 @@
-<div>
-    <h2>{{name}}</h2>
-    {{#each users}}
-        <div>
-            <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-            <h3>{{name}} ({{gender}} - {{age}})</h3>
-            <hr>
-            <h4>Friends :</h4>
-            <ul>
-                {{#each friends}}
-                    <li>
-                        <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-                        <h4>{{name}} ({{gender}} - {{age}})</h4>
-                        <hr>
-                        <h5>Friends :</h5>
-                        <ul>
-                            {{#each mutual_friends}}
-                                <li>
-                                    <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-                                    <h5>{{name}} ({{gender}} - {{age}})</h5>
-                                    {{#if friends}}
-                                    <hr>
-                                    <h6>Friends :</h6>
-                                    <ul>
-                                        {{#each mutual_friends}}
-                                            <li>
-                                                <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-                                                <h6>{{name}} ({{gender}} - {{age}})</h6>                                    
-                                            </li>                               
-                                        {{/each}}
-                                    </ul>
-                                    {{/if}}
-                                </li>                            
-                            {{/each}}
-                        </ul>
-                        {{#if groups}}
-                        <hr>
-                        <h5>Groups :</h5>
-                        <ul>                            
-                        {{#each groups}}
-                            <li>
-                                <span class="badge rounded-pill text-bg-info">{{id}}</span>
-                                <h5>{{name}}</h5>
-                                <p>{{description}}</p>
-                                <hr>
-                                <h6>Members :</h6>
-                                <ul>
-                                    {{#each members}}
-                                    <li>
-                                        <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-                                        <h6>{{name}} ({{gender}} - {{age}})</h6>
-                                    </li>
-                                    {{/each}}
-                                </ul>
-                            </li>
-                        {{/each}}
-                        </ul>
-                        {{/if}}
-                    </li>
-                {{/each}}
-            </ul>
-            {{#if groups}}
-            <hr>
-            <h4>Groups :</h4>
-            <ul>
-                {{#each groups}}
-                    <li>
-                        <span class="badge rounded-pill text-bg-info">{{id}}</span>
-                        <h4>{{name}}</h4>
-                        <p>{{description}}</p>
-                        <hr>
-                        <h5>Members :</h5>
-                        <ul>
-                            {{#each members}}
-                            <li>
-                                <span class="badge rounded-pill text-bg-secondary">{{id}}</span>
-                                <h5>{{name}} ({{gender}} - {{age}})</h5>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </li>
-                {{/each}}
-            {{/if}}
-            </ul>
+<main class='m-2'>
+  <h1>{{name}}</h1>
+  {{#each users}}
+    <div class='card my-2 p-2'>
+      <div class='row'>
+        <div class='col-2'>
+          <span
+            class='badge rounded-pill text-bg-secondary'
+          >{{id}}</span>
+          <h3>{{name}}</h3>
+          <p>{{gender}} - {{age}}</p>
         </div>
-        <hr>
-    {{/each}}
-</div>
+        <div class='col-10'>
+
+          {{#if friends}}
+            <div class='card my-2'>
+              <div class='card-header'>
+                <h4>Friends</h4>
+              </div>
+              <div class='card-body'>
+                {{! level 2 }}
+                {{#each friends}}
+                  <div class='card my-2 p-2'>
+                    <div class='row'>
+                      <div class='col-3'>
+                        <span
+                          class='badge rounded-pill text-bg-secondary'
+                        >{{id}}</span>
+                        <h4>{{name}}</h4>
+                        <p>{{gender}} - {{age}}</p>
+                      </div>
+                      <div class='col-9'>
+
+                        {{#if mutual_friends}}
+                          <div class='card my-2'>
+                            <div class='card-header'>
+                              <h5>Friends</h5>
+                            </div>
+                            <div class='card-body'>
+                              {{! level 3 }}
+                              {{#each mutual_friends}}
+                                <div class='card my-2 p-2'>
+                                  <div class='row'>
+                                    <div class='col-3'>
+                                      <span
+                                        class='badge rounded-pill text-bg-secondary'
+                                      >{{id}}</span>
+                                      <h6>{{name}}</h6>
+                                      <p>{{gender}}
+                                        -
+                                        {{age}}</p>
+                                    </div>
+                                    <div class='col-9'>
+
+                                      {{#if mutual_friends}}
+                                        <div
+                                          class='card my-2'
+                                        >
+                                          <div
+                                            class='card-header'
+                                          >
+                                            <h6>Friends</h6>
+                                          </div>
+                                          <div
+                                            class='card-body'
+                                          >
+                                            {{! level 4 }}
+                                            {{#each
+                                              mutual_friends
+                                            }}
+                                              <div
+                                                class='card my-2 p-2'
+                                              >
+                                                <div
+                                                  class='row'
+                                                >
+                                                  <div
+                                                    class='col-4'
+                                                  >
+                                                    <span
+                                                      class='badge rounded-pill text-bg-secondary'
+                                                    >{{id}}</span>
+                                                    <h6
+                                                    >{{name}}</h6>
+                                                    <p
+                                                    >{{gender}}
+                                                      -
+                                                      {{age}}</p>
+                                                  </div>
+                                                  <div
+                                                    class='col-9'
+                                                  >
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            {{/each}}
+
+                                            {{! level 4 end }}
+                                          </div>
+                                        </div>
+                                      {{/if}}
+
+                                      {{#if groups}}
+                                        <div
+                                          class='card my-2'
+                                        >
+                                          <div
+                                            class='card-header'
+                                          >
+                                            <h6>Groups</h6>
+                                          </div>
+                                          <div
+                                            class='card-body row'
+                                          >
+                                            {{#each groups}}
+                                              {{> fbGroupCard groupItem=this}}
+                                            {{/each}}
+
+                                          </div>
+                                        </div>
+                                      {{/if}}
+
+                                    </div>
+                                  </div>
+                                </div>
+                              {{/each}}
+                              {{! level 3 end }}
+                            </div>
+                          </div>
+                        {{/if}}
+
+                        {{#if groups}}
+                          <div class='card my-2'>
+                            <div class='card-header'>
+                              <h5>Groups</h5>
+                            </div>
+                            <div class='card-body'>
+                              {{#each groups}}
+                                {{> fbGroupCard groupItem=this}}
+                              {{/each}}
+
+                            </div>
+                          </div>
+                        {{/if}}
+
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+                {{! level 2 end }}
+              </div>
+            </div>
+          {{/if}}
+
+          {{#if groups}}
+            <div class='card my-2'>
+              <div class='card-header'>
+                <h4>Groups</h4>
+              </div>
+              <div class='card-body'>
+                {{#each groups}}
+                  {{> fbGroupCard groupItem=this}}
+                {{/each}}
+              </div>
+            </div>
+          {{/if}}
+
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</main>

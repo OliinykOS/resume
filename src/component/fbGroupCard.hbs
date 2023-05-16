@@ -1,0 +1,29 @@
+{{#with groupItem}}
+  <div class='card my-2 p-2'>
+    <div class='card-body'>
+      <span
+        class='badge rounded-pill text-bg-info'
+      >{{id}}</span>
+      <h5 class='card-title'>{{name}}</h5>
+      <p>{{description}}</p>
+      <div class='card'>
+        <div class='card-header'>
+          <h5>Members</h5>
+        </div>
+        <div class='card-body row'>
+          {{#each members}}
+            <div class='card col-5 mx-1'>
+              <div class='card-body'>
+                <span
+                  class='badge rounded-pill text-bg-secondary'
+                >{{id}}</span>
+                <h6>{{name}}</h6>
+                <p>({{gender}} - {{age}})</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/with}}

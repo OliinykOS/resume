@@ -1,103 +1,134 @@
-<div>
-    <h2>{{name}}</h2>
-    <p>{{description}}</p>
-    <p>{{price}}</p>
-    <span class="badge rounded-pill text-bg-secondary">{{category}}</span>    
-    <hr>
-    <h4>Features</h4>
-    <div>
-        <table>
-        {{#with features}}    
-            <tr>
-                {{#with processor}}
-                <th>Processor</th>
-                <td>
-                    {{brand}} {{model}}, {{speed}}, {{cores}} cores, {{cache}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                {{#with memory}}
-                <th>Memory</th>
-                <td>
-                    {{type}} {{size}} {{speed}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                {{#with storage}}
-                <th>Storage</th>
-                <td>
-                    {{type}} {{size}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                {{#with display}}
-                <th>Display</th>
-                <td>
-                    {{size}} ({{resolution}} / {{refresh_rate}}), {{technology}}, {{color_space}}, {{brightness}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                {{#with graphics}}
-                <th>Graphics</th>
-                <td>
-                    {{brand}} {{model}} {{memory}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                <th>Ports</th>
-                <td>
-                    {{#each ports}}
-                    <p>    
-                        {{count}} x {{type}}
-                        {{#if features}}
-                            (
-                            {{#each features}}
-                            <span class="badge rounded-pill text-bg-info">{{this}}</span> 
-                            {{/each}}
-                        )
-                        {{/if}}
-                    </p>
-                {{/each}}
-                </td>
-            </tr>
-            <tr>
-                {{#with battery}}
-                <th>Battery</th>
-                <td>
-                    {{type}} - {{capacity}} ({{life}})
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                <th>Weight</th>
-                <td>{{weight}}</td>
-            </tr>
-            <tr>
-                {{#with dimensions}}
-                <th>Dimansion</th>
-                <td>
-                    Height : {{height}}, Width : {{width}}, Depth : {{depth}}
-                </td>
-                {{/with}}
-            </tr>
-            <tr>
-                <th>Operating system</th>
-                <td>{{operating_system}}</td>
-            </tr>
-            <div>
-                
-                <th>Accessories</th>
-                <td>
-                    {{#each accessories}}
-                    <p>{{name}} - {{price}}</p>
-                    {{/each}}
-                </td>
-            </div>
-        {{/with}}
+<main class='m-2'>
+  <div class='card'>
+    <div class='card-header'>
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      <p>{{price}}</p>
+      <span
+        class='badge rounded-pill text-bg-secondary'
+      >{{category}}</span>
     </div>
-</div>
+    <div class='card-body'>
+      <h4 class='card-title'>Features</h4>
+      <table class='table'>
+        {{#with features}}
+          <tr>
+            {{#with processor}}
+              <th>Processor</th>
+              <td>
+                {{brand}}
+                {{model}},
+                {{speed}},
+                {{cores}}
+                cores,
+                {{cache}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            {{#with memory}}
+              <th>Memory</th>
+              <td>
+                {{type}}
+                {{size}}
+                {{speed}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            {{#with storage}}
+              <th>Storage</th>
+              <td>
+                {{type}}
+                {{size}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            {{#with display}}
+              <th>Display</th>
+              <td>
+                {{size}}
+                ({{resolution}}
+                /
+                {{refresh_rate}}),
+                {{technology}},
+                {{color_space}},
+                {{brightness}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            {{#with graphics}}
+              <th>Graphics</th>
+              <td>
+                {{brand}}
+                {{model}}
+                {{memory}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            <th>Ports</th>
+            <td>
+              {{#each ports}}
+                <p>
+                  {{count}}
+                  x
+                  {{type}}
+                  {{#if features}}
+                    (
+                    {{#each features}}
+                      <span
+                        class='badge rounded-pill text-bg-info'
+                      >{{this}}</span>
+                    {{/each}}
+                    )
+                  {{/if}}
+                </p>
+              {{/each}}
+            </td>
+          </tr>
+          <tr>
+            {{#with battery}}
+              <th>Battery</th>
+              <td>
+                {{type}}
+                -
+                {{capacity}}
+                ({{life}})
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td>{{weight}}</td>
+          </tr>
+          <tr>
+            {{#with dimensions}}
+              <th>Dimansion</th>
+              <td>
+                Height :
+                {{height}}, Width :
+                {{width}}, Depth :
+                {{depth}}
+              </td>
+            {{/with}}
+          </tr>
+          <tr>
+            <th>Operating system</th>
+            <td>{{operating_system}}</td>
+          </tr>
+          <div>
+            <th>Accessories</th>
+            <td>
+              {{#each accessories}}
+                <p>{{name}} - {{price}} $</p>
+              {{/each}}
+            </td>
+          </div>
+        {{/with}}
+      </table>
+    </div>
+  </div>
+</main>

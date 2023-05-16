@@ -1,130 +1,191 @@
-<div>
-    <section>
-        {{> title data=name big=true}}
-        <br>
-        {{> title data="Short info"}}
-        <div><strong>Born:</strong> {{birthdate}} - {{birthplace}}</div>
-        <div><strong>Died:</strong> {{deathdate}} - {{deathplace}}</div>
-        <div><strong>Nationality:</strong> {{nationality}}</div>
-        <div><strong>Occupation:</strong> {{occupation}}</div>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Known for:"}}
+<main class='m-2'>
+  <section>
+    <h1>{{name}}</h1>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Short info</h4>
+      </div>
+      <div class='card-body'>
+        <div><strong>Born:</strong>
+          {{birthdate}}
+          -
+          {{birthplace}}</div>
+        <div><strong>Died:</strong>
+          {{deathdate}}
+          -
+          {{deathplace}}</div>
+        <div><strong>Nationality:</strong>
+          {{nationality}}</div>
+        <div><strong>Occupation:</strong>
+          {{occupation}}</div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Known for:</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each known_for}}
+          {{#each known_for}}
             <li>{{this}}</li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Education"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Education</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each education}}
+          {{#each education}}
             <li>
-                <p><strong>{{degree}}</strong> in {{field}} ({{year}}) / {{institution}}</p>
+              <p><strong>{{degree}}</strong>
+                in
+                {{field}}
+                ({{year}}) /
+                {{institution}}</p>
             </li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Notable publications"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Notable publications</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each notable_publications}}
+          {{#each notable_publications}}
             <li>
-                <p><strong>{{title}}</strong> ({{year}}) / {{publisher}}</p>
+              <p><strong>{{title}}</strong>
+                ({{year}}) /
+                {{publisher}}</p>
             </li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Partners"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Partners</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each partners}}
+          {{#each partners}}
             <li>
-                <p><strong>{{name}}</strong> ({{years}})</p>
-                <em>{{relationship}}</em>
+              <p><strong>{{name}}</strong> ({{years}})</p>
+              <em>{{relationship}}</em>
             </li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Awards"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Awards</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each awards}}
+          {{#each awards}}
             <li>
-                <p><strong>{{title}}</strong> ({{year}})</p>
-                <em>{{description}}</em>
+              <p><strong>{{title}}</strong> ({{year}})</p>
+              <em>{{description}}</em>
             </li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Influences"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Influences</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each influences}}
+          {{#each influences}}
             <li>{{this}}</li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Influenced"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Influenced</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each influenced}}
+          {{#each influenced}}
             <li>{{this}}</li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Quotes"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Quotes</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each quotes}}
+          {{#each quotes}}
             <li><q>{{this}}</q></li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{> title data="Major discoveries"}}
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class='card'>
+      <div class='card-header'>
+        <h4>Major discoveries</h4>
+      </div>
+      <div class='card-body'>
         <ul>
-            {{#each major_discoveries}}
+          {{#each major_discoveries}}
             <li>{{title}} ({{year}}) - {{description}}</li>
-            {{/each}}
+          {{/each}}
         </ul>
-    </section>
-    <br>
-    <hr>
-    <br>
-    <section>
-        {{#with contributions}}
-            {{> title data=title}}
-            <em>{{description}}</em> {{year}} ({{field}}) 
-            
-        {{/with}}
-    </section>
-</div>
+      </div>
+    </div>
+  </section>
+  <hr />
+  <section>
+    {{#with contributions}}
+      <div class='card'>
+        <div class='card-header'>
+          <h4>{{title}}</h4>
+        </div>
+        <div class='card-body'>
+          <p>{{description}}</p>
+          <em>{{year}}</em>
+          ({{field}})
+        </div>
+      </div>
+
+    {{/with}}
+  </section>
+</main>

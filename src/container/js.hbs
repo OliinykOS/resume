@@ -1,68 +1,107 @@
-<div>
-    {{> title data=name big=true}}
-    <p>{{description}}</p>
-    <p>Was created by {{history.founder}} in {{history.year}}</p>
-    <br>
-    <hr>
-    <div>
-    {{#each types}}
-        <span class="badge text-bg-info">{{this}}</span>
-    {{/each}}
-    </div>
-    <hr>
-    <div>
+<main class='m-2'>
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Was created by
+    {{history.founder}}
+    in
+    {{history.year}}</p>
+  <hr />
+  <table class='table'>
+    <tr>
+      <th>Types</th>
+      <td>
+        {{#each types}}
+          <span class='badge text-bg-info'>{{this}}</span>
+        {{/each}}
+      </td>
+    </tr>
     {{#with syntax}}
-        variables: 
-        {{#each variables}}
-        <span class="badge text-bg-secondary">{{this}}</span>
-        {{/each}}
-        <hr>
-        functions: 
-        {{#each functions}}
-        <span class="badge text-bg-secondary">{{this}}</span>
-        {{/each}}
-        <hr>
-        conditionals: 
-        {{#each conditionals}}
-        <span class="badge text-bg-secondary">{{this}}</span>
-        {{/each}}
-        <hr>
-        loops: 
-        {{#each loops}}
-        <span class="badge text-bg-secondary">{{this}}</span>
-        {{/each}}
-        <hr>
-        classes: 
-        {{#each classes}}
-        <span class="badge text-bg-secondary">{{this}}</span>
-        {{/each}}
-        <hr>
+      <tr>
+        <th>Variables</th>
+        <td>
+          {{#each variables}}
+            <span
+              class='badge text-bg-secondary'
+            >{{this}}</span>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <th>Functions</th>
+        <td>
+          {{#each functions}}
+            <span
+              class='badge text-bg-secondary'
+            >{{this}}</span>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <th>Conditionals</th>
+        <td>
+          {{#each conditionals}}
+            <span
+              class='badge text-bg-secondary'
+            >{{this}}</span>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <th>Loops</th>
+        <td>
+          {{#each loops}}
+            <span
+              class='badge text-bg-secondary'
+            >{{this}}</span>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <th>Classes</th>
+        <td>
+          {{#each classes}}
+            <span
+              class='badge text-bg-secondary'
+            >{{this}}</span>
+          {{/each}}</td>
+      </tr>
     {{/with}}
-    </div>
-    <div>
-        features: 
+    <tr>
+      <th>Features</th>
+      <td>
         {{#each features}}
-        <span class="badge rounded-pill text-bg-success">{{this}}</span>
+          <span
+            class='badge rounded-pill text-bg-success'
+          >{{this}}</span>
         {{/each}}
-        <hr>
-    </div>
-    <div>
-        libraries: 
+      </td>
+    </tr>
+    <tr>
+      <th>Libraries</th>
+      <td>
         {{#each libraries}}
-        <span class="badge rounded-pill text-bg-warning">{{this}}</span>
+          <span
+            class='badge rounded-pill text-bg-warning'
+          >{{this}}</span>
         {{/each}}
-        <hr>
-    </div>
-    <div>
-        tools: 
+      </td>
+    </tr>
+    <tr>
+      <th>Tools</th>
+      <td>
         {{#each tools}}
-        <span class="badge rounded-pill text-bg-danger">{{this}}</span>
+          <span
+            class='badge rounded-pill text-bg-danger'
+          >{{this}}</span>
         {{/each}}
-        <hr>
-    </div>
-    <div>
-        {{#each community}}
-            <button type="button" class="btn btn-outline-info">{{type}}:{{name}}</button>
-        {{/each}}
-    </div>
-</div>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+    {{#each community}}
+      <button type='button' class='btn btn-outline-info'>
+        {{type}}:{{name}}</button>
+    {{/each}}
+  </div>
+</main>
